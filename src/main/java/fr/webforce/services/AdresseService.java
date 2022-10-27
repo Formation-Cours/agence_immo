@@ -2,9 +2,11 @@ package fr.webforce.services;
 
 import fr.webforce.configurations.ConnectionBDD;
 import fr.webforce.entities.AdresseEntity;
+import fr.webforce.entities.TypeEntity;
 import fr.webforce.repositories.CommonRepository;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -13,6 +15,24 @@ public class AdresseService implements CommonRepository<AdresseEntity, Integer> 
 
 	@Override
 	public Collection<AdresseEntity> findAll() {
+		try (Statement st = conn.createStatement()) {
+			ResultSet rs = st.executeQuery("SELECT * FROM adresse");
+			Collection<AdresseEntity> adresses = new ArrayList<>();
+			while (rs.next()) {
+				AdresseEntity ad = new AdresseEntity(
+						rs.getLong("id"),
+						rs.getInt("num"),
+						rs.getString("rue"),
+						rs.getString("cp"),
+						rs.getString("ville")
+				);
+
+				adresses.add(ad);
+			}
+			return adresses;
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
 		return null;
 	}
 
@@ -32,7 +52,7 @@ public class AdresseService implements CommonRepository<AdresseEntity, Integer> 
 
 			int nb = st.executeUpdate();
 			ResultSet rs = st.getGeneratedKeys();
-			if (rs.next()){
+			if (rs.next()) {
 				adresseEntity.setId(rs.getLong(1));
 			}
 			return Optional.of(nb);

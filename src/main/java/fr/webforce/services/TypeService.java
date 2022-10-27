@@ -4,7 +4,9 @@ import fr.webforce.configurations.ConnectionBDD;
 import fr.webforce.entities.TypeEntity;
 import fr.webforce.repositories.CommonRepository;
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -14,6 +16,20 @@ public class TypeService implements CommonRepository<TypeEntity, Integer> {
 
 	@Override
 	public Collection<TypeEntity> findAll() {
+		try(Statement st = conn.createStatement()){
+			ResultSet rs = st.executeQuery("SELECT * FROM type");
+			Collection<TypeEntity> types = new ArrayList<>();
+			while(rs.next()){
+				TypeEntity type = new TypeEntity();
+				type.setId(rs.getLong("id"));
+				type.setEnum(rs.getString("nom"));
+
+				types.add(type);
+			}
+			return types;
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
 		return null;
 	}
 

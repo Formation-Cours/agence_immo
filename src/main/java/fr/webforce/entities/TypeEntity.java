@@ -11,4 +11,15 @@ import lombok.NoArgsConstructor;
 public class TypeEntity {
 	private Long id;
 	private TypeEnum nom;
+
+	public void setEnum(String nom) {
+		this.nom = switch (nom) {
+			case "maison" -> TypeEnum.MAISON;
+			case "appartement" -> TypeEnum.APPARTEMENT;
+			case "chateau" -> TypeEnum.CHATEAU;
+			case "terrain" -> TypeEnum.TERRAIN;
+			case "garage" -> TypeEnum.GARAGE;
+			default -> null;
+		};
+	}
 }
