@@ -9,18 +9,10 @@
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bdd.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/configurations/ConnectionBDD.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/entities/AdresseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/entities/BienEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/entities/TypeEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/repositories/CommonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/services/AdresseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/services/BienService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/webforce/services/TypeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="3zgumbxn" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -52,6 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "/Users/olprog/Downloads/agence_immo",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
