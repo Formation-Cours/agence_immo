@@ -5,9 +5,7 @@ import fr.webforce.entities.BienEntity;
 import fr.webforce.repositories.CommonRepository;
 
 import javax.swing.plaf.nimbus.State;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -35,7 +33,25 @@ public class BienService implements CommonRepository<BienEntity, Integer> {
 	}
 
 	@Override
-	public Optional<Integer> insert(BienEntity bienEntity) {
+	public Optional<Integer> insert(BienEntity b) {
+		String req = "INSERT INTO bien VALUES (null,?,?,?,?,?,?,?,?,?,?)";
+		try(PreparedStatement st = conn.prepareStatement(req)){
+			st.setInt(1, b.getNbPieces());
+			st.setInt(2, b.getSurface());
+			st.setInt(3, b.getPrix());
+			st.setInt(4, b.getAnnee());
+			st.setBoolean(5, b.getGarage());
+			st.setBoolean(6, b.getTerrase());
+			st.setBoolean(7, b.getBalcon());
+			st.setBoolean(8, b.getJardin());
+			st.setLong(9, b.getType().getId());
+			st.setLong(10,b.getAdresse().getId());
+
+			int nb = st.executeUpdate();
+			return Optional.of(nb);
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
 		return Optional.empty();
 	}
 

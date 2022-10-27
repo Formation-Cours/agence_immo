@@ -3,15 +3,15 @@ package fr.webforce.entities;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class BienEntity {
-	@NonNull private Long id;
-	@NonNull private Byte nbPieces;
-	@NonNull private Short surface;
-	@NonNull private Long prix;
-	@NonNull private Short annee;
+	private Long id;
+	@NonNull private Integer nbPieces;
+	@NonNull private Integer surface;
+	@NonNull private Integer prix;
+	@NonNull private Integer annee;
 	@NonNull private Boolean garage;
 	@NonNull private Boolean terrase;
 	@NonNull private Boolean balcon;
